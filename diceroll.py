@@ -1,5 +1,6 @@
-while True:
-    import random
+import random
+user_input = none
+while user_input != q:
     print("dice roll")
     input()
     roll = random.randint(1,6)
@@ -9,42 +10,37 @@ while True:
         print("|   o    |")
         print("|        |")
         print("----------")
-        print("Roll Again?")
     if roll == 2 :
         print("----------")
         print("| o      |")
         print("|        |")
         print("|      o |")
         print("----------")
-        print("Roll Again?")
     if roll == 3 :
         print("----------")
         print("| o      |")
         print("|    o   |")
         print("|       o|")
         print("----------")
-        print("Roll Again?")
     if roll == 4 :
         print("----------")
         print("| o    o |")
         print("|        |")
         print("| o    o |")
         print("----------")
-        print("Roll Again?")
     if roll == 5 :
         print("----------")
         print("| o    o |")
         print("|   o    |")
         print("| o    o |")
         print("----------")
-        print("Roll Again?")
     if roll == 6 :
         print("----------")
         print("| o    o |")
         print("| o    o |")
         print("| o    o |")
         print("----------")
-        print("Roll Again?")
+    input("Roll Again?")
 
 
 
