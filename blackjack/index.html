@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blackjack</title>
+  <style>
+    .card {
+      border: solid black 1px;
+      margin-right: 10px;
+      padding: 30px 15px;
+      font-size: 3em;
+      line-height: 3em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Blackjack</h1>
+  <button id="new-game">New Game</button>
+
+  <h2>Dealer's Hand</h2>
+  <div id="dealer-hand"></div>
+
+  <h2>Player's Hand</h2>
+  <div id="player-hand"></div>
+
+  <script>
+    document.getElementById('new-game').addEventListener('click', function() { newGame(); });
+
+    function removeChildren(el) {
+      while (el.firstChild) { el.removeChild(el.firstChild); }
+    }
+
+    function cardEl(card) {
+      var el = document.createElement('span');
+      el.classList.add('card');
+      el.textContent = card.name + ' ' + card.suit;
+      return el
+    }
+
+    function showDealerHand(hand) {
+      var dealerDiv = document.getElementById('dealer-hand');
+      removeChildren(dealerDiv);
+
+      for (var i=0; i < hand.length; i++) {
+        dealerDiv.appendChild(cardEl(hand[i]));
+      }
+    }
+
+    function showPlayerHand(hand) {
+      var dealerDiv = document.getElementById('player-hand');
+      removeChildren(dealerDiv);
+
+      for (var i=0; i < hand.length; i++) {
+        dealerDiv.appendChild(cardEl(hand[i]));
+      }
+    }
+
+  </script>
+
+  <script type="text/javascript" src="blackjack.js"></script>
+</body>
+</html>
