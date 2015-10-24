@@ -10,6 +10,9 @@
       font-size: 3em;
       line-height: 3em;
     }
+    .hide {
+      color: transparent;
+    }
   </style>
 </head>
 
@@ -41,7 +44,10 @@
       var dealerDiv = document.getElementById('dealer-hand');
       removeChildren(dealerDiv);
 
-      for (var i=0; i < hand.length; i++) {
+      var firstCard = cardEl(hand[0]);
+      firstCard.classList.add('hide');
+      dealerDiv.appendChild(firstCard);
+      for (var i=1; i < hand.length; i++) {
         dealerDiv.appendChild(cardEl(hand[i]));
       }
     }
